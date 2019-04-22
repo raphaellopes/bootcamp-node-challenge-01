@@ -9,6 +9,7 @@ const app = express();
 nunjucks.configure('src/views', {
   autoscape: true,
   express: app,
+  watch: true,
 });
 
 app.set('view engine', 'njk');
