@@ -5,7 +5,8 @@
   "author": "Raphael Lopes <ph.campanario07@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "nunjucks": "^3.2.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
