@@ -1,1 +1,12 @@
-<h1>My index modifed</h1>
+{% extends 'base.njk' %}
+
+{% block content %}
+<h2>Fill the field with your age</h2>
+
+<form action="/check" method="POST">
+  <label>
+    Age: <input name="age" type="number" />
+  </label>
+  <button type="submit">Send</button>
+</form>
+{% endblock %}
