@@ -16,6 +16,11 @@ app.use(express.urlencoded({ extended: false }));
 
 app.set('view engine', 'njk');
 
+// midleware
+const checkAgeMidleware = (req, res, next) => (
+  req.query.age ? next() : res.redirect('/')
+);
+
 const checkAge = age => (age >= 18 ? 'major' : 'minor');
 
 // routes
@@ -27,6 +32,7 @@ app.post('/check', (req, res) => {
 
 app.get(
   ['/major', '/minor'],
+  checkAgeMidleware,
   (req, res) => {
     const { query: { age } } = req;
     return res.render('result', { age, type: checkAge(age) });
